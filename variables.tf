@@ -39,6 +39,10 @@ variable "tgw_subnet2" {
   default     = ""
 }
 
+variable "geocluster_igw" {
+  description = "IGW on the existing VPC where Geocluster deployed"
+  default     = ""
+}
 
 #######################################################
 ############# Check Point Settings ####################
