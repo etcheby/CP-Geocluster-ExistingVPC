@@ -10,37 +10,37 @@ variable "geocluster_vpc" {
 }
 
 variable "public_subnet1" {
-  description = "Geocluster Public Subnet AZ1 ID"
+  description = "Geocluster VPC Public Subnet AZ1 ID"
   default     = ""
 }
 
 variable "public_subnet2" {
-  description = "Geocluster Public Subnet AZ2 ID"
+  description = "Geocluster VPC Public Subnet AZ2 ID"
   default     = ""
 }
 
 variable "private_subnet1" {
-  description = "Geocluster Private Subnet AZ1 ID"
+  description = "Geocluster VPC Private Subnet AZ1 ID"
   default     = ""
 }
 
 variable "private_subnet2" {
-  description = "Geocluster Private Subnet AZ2 ID"
+  description = "Geocluster VPC Private Subnet AZ2 ID"
   default     = ""
 }
 
 variable "tgw_subnet1" {
-  description = "Geocluster TGW Subnet AZ1 ID"
+  description = "Geocluster VPC TGW Subnet AZ1 ID"
   default     = ""
 }
 
 variable "tgw_subnet2" {
-  description = "Geocluster TGW Subnet AZ2 ID"
+  description = "Geocluster VPC TGW Subnet AZ2 ID"
   default     = ""
 }
 
 variable "geocluster_igw" {
-  description = "IGW on the existing VPC where Geocluster deployed"
+  description = "Existing VPC IGW ID"
   default     = ""
 }
 
