@@ -10,7 +10,7 @@ resource "aws_route_table" "public_subnets_rt" {
     # Route to the internet
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.geocluster_igw.id
+    gateway_id = var.geocluster_igw
   }
 
 tags = {
