@@ -5,13 +5,13 @@ resource "aws_cloudformation_stack" "checkpoint_geocluster_stack" {
   name = "Geocluster"
 
   parameters = {
-    VPC                     = var.geocluster_vpc.id
-    PublicSubnetA           = var.public_subnet1.id
-    PublicSubnetB           = var.public_subnet2.id
-    PrivateSubnetA          = var.private_subnet1.id
-    PrivateSubnetB          = var.private_subnet2.id
-    TgwHASubnetA            = var.tgw_subnet1.id
-    TgwHASubnetB            = var.tgw_subnet2.id
+    VPC                     = var.geocluster_vpc
+    PublicSubnetA           = var.public_subnet1
+    PublicSubnetB           = var.public_subnet2
+    PrivateSubnetA          = var.private_subnet1
+    PrivateSubnetB          = var.private_subnet2
+    TgwHASubnetA            = var.tgw_subnet1
+    TgwHASubnetB            = var.tgw_subnet2
     InstanceType            = var.gateway_instance_type
     KeyName                 = var.key_name
     License                 = "${var.cpversion}-BYOL"
