@@ -2,40 +2,47 @@
 ############# Variables #################
 #########################################
 
-# Geo-Cluster VPC & Subnets
-
 variable "geocluster_vpc" {
   description = "Check Point Geocluster VPC ID"
   default     = ""
 }
 
 variable "public_subnet1" {
-  description = "Geocluster VPC Public Subnet AZ1 ID"
+  description = "Geocluster Public Subnet AZ1 ID"
   default     = ""
 }
 
 variable "public_subnet2" {
-  description = "Geocluster VPC Public Subnet AZ2 ID"
+  description = "Geocluster Public Subnet AZ2 ID"
   default     = ""
 }
 
 variable "private_subnet1" {
-  description = "Geocluster VPC Private Subnet AZ1 ID"
+  description = "Geocluster Private Subnet AZ1 ID"
   default     = ""
-}
 
 variable "private_subnet2" {
-  description = "Geocluster VPC Private Subnet AZ2 ID"
+  description = "Geocluster Private Subnet AZ2 ID"
   default     = ""
 }
 
 variable "tgw_subnet1" {
-  description = "Geocluster VPC TGW Subnet AZ1 ID"
+  description = "Geocluster TGW Subnet AZ1 ID"
   default     = ""
 }
 
 variable "tgw_subnet2" {
-  description = "Geocluster VPC TGW Subnet AZ2 ID"
+  description = "Geocluster TGW Subnet AZ2 ID"
+  default     = "a"
+}
+
+variable "tgwha_public_rt" {
+  description = "Subnet RT associated to geocluster public subnets"
+  default     = ""
+}
+
+variable "tgwha_private_rt" {
+  description = "Subnet RT associated to geocluster private subnets"
   default     = ""
 }
 
@@ -43,6 +50,27 @@ variable "geocluster_igw" {
   description = "Existing VPC IGW ID"
   default     = ""
 }
+
+variable "gateway_name" {
+  description = "Name of Geocluster Instances"
+  default     = ""
+}
+
+variable "gateway_iamrole" {
+  description = "IAM Role Name for Geocluster Instances API Failover"
+  default     = ""
+}
+
+variable "kmskey_identifier" {
+  description = "KMS or CMK key Identifier - Use key ID, alias or ARN. Key alias should be prefixed with 'alias/' "
+  default     = "alias/aws/ebs"
+}
+
+variable "gateway_hostname" {
+  description = "Geocluster Instances Hostname"
+  default     = ""
+}
+
 
 #######################################################
 ############# Check Point Settings ####################
@@ -67,15 +95,11 @@ variable "cpversion" {
 
 variable "key_name" {
   description = "Key Pair to SSH into Check Point instances"
-  default     = ""
-}
-
-variable "mgmt_instance_type" {
-  default = ""
+  default     = "AWSLab"
 }
 
 variable "gateway_instance_type" {
-  default = ""
+  default = "c5.large"
 }
 
 variable "primary_az" {
